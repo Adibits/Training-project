@@ -27,6 +27,5 @@ export const getHeadersandParams = (objArr) => {
             obj={...obj, [data.key]:data.value}
         }
     });
-    console.log(obj);
     return obj;
 }

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import CreateTable from './CreateTable'
 import CreateJsonText from './CreateJsonText'
 import { DataContext } from '../context/DataProvider'
+import CreateTestJson from './CreateTestJson'
 
 const SelectTabs = () => {
     const {paramData,setParamData,headerData,setHeaderData}=useContext(DataContext)
@@ -20,6 +21,7 @@ const SelectTabs = () => {
             <Tab label="Params"/>
             <Tab label="Headers"/>
             <Tab label="Body" />
+            <Tab label="Test" />
         </Tabs>
         <Box
             role="tabpanel"
@@ -41,6 +43,13 @@ const SelectTabs = () => {
             id={`simple-tabpanel-${2}`}
             aria-labelledby={`simple-tab-${2}`}
         > <CreateJsonText />
+        </Box>
+        <Box
+            role="tabpanel"
+            hidden={value !== 3}
+            id={`simple-tabpanel-${3}`}
+            aria-labelledby={`simple-tab-${3}`}
+        > <CreateTestJson />
         </Box>
     </Box>
   )

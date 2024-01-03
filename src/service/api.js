@@ -2,21 +2,23 @@ import axios from 'axios'
 import { getHeadersandParams } from '../utils/common-utils';
 
 export const getData = async (formData, jsonText, paramData, headerData) => {
-    const apiType=formData.type.toLowerCase();
+    const apiType=formData.type;
     const apiURL=formData.url;
     const apiHeaders=getHeadersandParams(headerData);
     const apiParams=getHeadersandParams(paramData);
-    console.log(apiHeaders);
     try {
-        
-        return await axios({
-            method: apiType,
+        console.log(jsonText);
+        const config = {
+            method:apiType,
             url:apiURL,
-            body: jsonText,
             headers:apiHeaders,
             params:apiParams
-        })
-        
+        }
+        if(apiType==='POST' || apiType==='PUT') {
+            config.data=JSON.parse(jsonText);
+        }
+        console.log(config);
+        return await axios(config);
         
     } catch (error) {
         console.log('error',error);
