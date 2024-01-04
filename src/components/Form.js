@@ -15,7 +15,7 @@ const Form = ({onSendClick}) => {
         <Select
             value={formData.type}
             label="Age"
-            style={{width:150,height:40}}
+            style={{width:150,height:40,fontSize:'large',background:'#1976d2',justifyContent:'center',color:'#FFFFF7'}}
             onChange={ (e) => {handleChange(e)}}
             >
             <MenuItem value={'GET'}>GET</MenuItem>
@@ -24,7 +24,8 @@ const Form = ({onSendClick}) => {
         </Select>
         <TextField 
            size='small'
-           style={{background:'#F6F6F6', width: '100%'}}
+           style={{background:'#F6F6F6', width: '100%', marginRight:5, marginLeft:5}}
+           value={formData.url}
            onChange={(e) => {onUrlChange(e)}}
         ></TextField>
         <Button

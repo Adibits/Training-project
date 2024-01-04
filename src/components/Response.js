@@ -5,7 +5,6 @@ import { DataContext } from '../context/DataProvider';
 
 
 const Response = ({data,status,startTime,endTime,dataSize,testRes}) => {
-  const testResValue=testRes.join('\n');
   const [value,setValue]=useState(0);
   const statusCode = () =>{
     if(status===200) return "OK";
@@ -26,18 +25,6 @@ const Response = ({data,status,startTime,endTime,dataSize,testRes}) => {
   const handleChange =((event, newValue) => {
     setValue(newValue);
   })
-  const returning = (test) => {
-    test.map((key) => {
-      if(key==='error') {
-        
-        return ('Fail' + {key});
-      } 
-      else {
-        <button>Pass</button>
-        return {key};
-      }
-    })
-  }
   return (
     /*<Box>
           <Toolbar variant='primary' style={{margin:3, background:"black"}}>
@@ -100,7 +87,7 @@ const Response = ({data,status,startTime,endTime,dataSize,testRes}) => {
            backgroundRepeat: 'no-repeat', 
            paddingLeft: 35, paddingTop: 10,
            lineHeight:'1.5'}}
-           value={returning()}
+           value={testRes}
         > 
         </TextareaAutosize>
       </Box> 

@@ -14,7 +14,7 @@ const SelectTabs = () => {
     })
 
   return (
-    <Box style={{marginTop: 20}}>
+    <Box style={{marginTop: 20,padding:20}}>
         <Tabs value={value} onChange={handleChange}
             TabIndicatorProps={{sx :{ backgroundColor: "orange"}}}
             aria-label="basic tabs example">
@@ -28,6 +28,7 @@ const SelectTabs = () => {
             hidden={value !== 0}
             id={`simple-tabpanel-${0}`}
             aria-labelledby={`simple-tab-${0}`}
+            style={{margin:20}}
         > <CreateTable props={'Query Params'} data={paramData} setData={setParamData}/>
         </Box>
         <Box
@@ -35,6 +36,7 @@ const SelectTabs = () => {
             hidden={value !== 1}
             id={`simple-tabpanel-${1}`}
             aria-labelledby={`simple-tab-${1}`}
+            style={{margin:20}}
         > <CreateTable props={'Headers'} data={headerData} setData={setHeaderData}/>
         </Box>
         <Box
@@ -42,6 +44,7 @@ const SelectTabs = () => {
             hidden={value !== 2}
             id={`simple-tabpanel-${2}`}
             aria-labelledby={`simple-tab-${2}`}
+            style={{margin:20}}
         > <CreateJsonText />
         </Box>
         <Box
@@ -49,6 +52,7 @@ const SelectTabs = () => {
             hidden={value !== 3}
             id={`simple-tabpanel-${3}`}
             aria-labelledby={`simple-tab-${3}`}
+            style={{margin:20}}
         > <CreateTestJson />
         </Box>
     </Box>

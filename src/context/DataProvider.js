@@ -2,7 +2,7 @@ import React, {createContext, useState} from 'react'
 export const DataContext=createContext(null);
 
 const DataProvider = ({children}) => {
-    const [formData,setFormData]=useState({url:'',type:'POST'})
+    const [formData,setFormData]=useState({url:'',type:'GET'})
     const [paramData,setParamData]=useState([]);
     const [headerData,setHeaderData]=useState([]);
     const [jsonText,setJsonText]=useState('');
